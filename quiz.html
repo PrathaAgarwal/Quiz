@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+
+ </head>
+<body onload="showQues()">
+    <div class="cursor"></div>
+    <div class="main">
+    <h1>Best of luck !</h1>
+    <div id="timer">Time Left: <span id="time">12:00</span></div>
+        <div id="quiz"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script> var cursor = document.querySelector(".cursor"); 
+      var main= document.querySelector(".main");
+      main.addEventListener("mousemove", function(dets){
+          console.log("event listener added");
+          gsap.to(cursor,{
+               x:dets.x,
+               y:dets.y,
+               duration:0.1,
+               ease: "power1.out",
+          })
+       });</script>
+    <script src="./index.js"></script>
+    </body>
