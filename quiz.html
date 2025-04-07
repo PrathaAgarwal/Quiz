@@ -28,6 +28,27 @@
                duration:0.1,
                ease: "power1.out",
           })
-       });</script>
+       });
+let timeLeft=720;
+let timer= document.getElementById("timer");
+
+
+    console.log("timer started");
+const t= setInterval(function(){
+    if (timeLeft<0){
+        alert("oops! time out");
+        localStorage.setItem("quizScore", score);
+        window.location.href="result.html";
+        clearInterval(t);
+    }else{
+        const m= Math.floor(timeLeft/60);
+        const s= timeLeft%60;
+        timer.textContent = `${m}:${s < 10 ? '0' + s : s}`;
+        timeLeft--;
+    }
+}, 1000);
+
+       
+       </script>
     <script src="./index.js"></script>
     </body>

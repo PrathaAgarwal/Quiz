@@ -81,26 +81,7 @@ const start = document.getElementById("startb");
 start.addEventListener("click", startQuiz);
 function startQuiz(){
     console.log("button clcked");
-    startTimer();
     window.location.href="./quiz.html";
-}
-let timeLeft=720;
-let timer= document.getElementById("timer");
-function startTimer(){
-const t= setInterval(function(){
-    if (timeLeft<0){
-        alert("oops! time out");
-        localStorage.setItem("quizScore", score);
-        window.location.href="result.html";
-        clearInterval(t);
-    }else{
-        const m= Math.floor(timeLeft/60);
-        const s= timeLeft%60;
-        timer.textContent = `${m}:${s < 10 ? '0' + s : s}`;
-
-        timeLeft--;
-    }
-}, 1000);
 }
 
 
